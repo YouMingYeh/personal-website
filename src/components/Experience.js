@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     },
     backgroundColor: theme.palette.background.default,
     minHeight: "100vh",
-
     
   },
   title: {

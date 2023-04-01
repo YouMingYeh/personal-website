@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Box, Icon } from "@material-ui/core";
 import Typed from "react-typed";
-import myPhoto from "../images/myPhoto.JPG";
+import myPhoto from "../images/myPhoto.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,8 +29,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginBottom: theme.spacing(4),
     fontWeight: "bold",
-    width: "80%",
-    fontSize: "3.5em"
+    width: "70%",
+    fontSize: "3.5em",
+    zIndex: 1
   },
   paragraph: {
     marginBottom: theme.spacing(0),
@@ -43,10 +44,13 @@ const useStyles = makeStyles((theme) => ({
   },
   photo: {
     width: "20%",
-    maxWidth: "200px",
-    
-    borderRadius: "10rem",
+    scale: 2,
+    borderRadius: "3rem",
     marginBottom: theme.spacing(4),
+    transition: 'transform 1s ease-in-out',
+    '&:hover': {
+      transform: 'rotate(10deg) scale(1.2)',
+    }
   },
   typed: {
     color: theme.palette.primary.main,
