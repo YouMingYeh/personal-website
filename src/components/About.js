@@ -88,8 +88,9 @@ const About = () => {
           className={classes.paragraph}
         >
           <span className={classes.important} style={{ fontSize: "3rem" }}>
-            Hi there! 🙋‍♂️
+            Hi there! 
           </span>
+          <img src={require('../images/hi.png')} style={{height: '7rem'}}></img>
           <br></br>
           <span>
             A student studying{" "}

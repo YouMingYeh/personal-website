@@ -11,6 +11,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 
+
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     display: "flex",
@@ -24,14 +25,13 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.secondary.main,
     },
   },
-  name: {
-    color: "white",
+  img: {
     "&:hover": {
       color: theme.palette.secondary.main,
       cursor: "pointer",
     },
     padding: 0,
-    fontWeight: "bold",
+    maxWidth: theme.spacing(6)
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -72,14 +72,12 @@ const Header = ({ setMode }) => {
     <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
         <div style={{display: 'flex'}}>
-          <Typography
-            variant="h5"
-            color="white"
+          <img
             onClick={() => scrollToSection("about")}
-            className={classes.name}
+            className={classes.img}
+            src={require('../images/nice.png')}
           >
-            YYM
-          </Typography>
+          </img>
           <Button
             onClick={() => {
               setMode((prev) => !prev);
@@ -119,6 +117,12 @@ const Header = ({ setMode }) => {
                 className={classes.navLink}
               >
                 Experience
+              </Button>
+              <Button
+                onClick={() => scrollToSection("education")}
+                className={classes.navLink}
+              >
+                Education
               </Button>
               <Button
                 onClick={() => scrollToSection("contact")}
@@ -177,6 +181,14 @@ const Header = ({ setMode }) => {
                   }}
                 >
                   Experience
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    scrollToSection("education");
+                    handleMobileMenuClose();
+                  }}
+                >
+                  Education
                 </MenuItem>
                 <MenuItem
                   onClick={() => {

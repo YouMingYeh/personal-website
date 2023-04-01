@@ -1,5 +1,5 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import {
   Grid,
   Card,
@@ -9,38 +9,51 @@ import {
   CardMedia,
   Typography,
   Button,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: theme.spacing(8),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       paddingTop: theme.spacing(10),
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up("md")]: {
       paddingTop: theme.spacing(12),
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up("lg")]: {
       paddingTop: theme.spacing(14),
     },
     backgroundColor: theme.palette.background.default,
-    minHeight: '100vh',
+    minHeight: "100vh",
+    position: "relative",
   },
   title: {
     marginBottom: theme.spacing(4),
-    fontWeight: 'bold'
+    fontWeight: "bold",
+    position: "relative",
   },
   card: {
     maxWidth: 345,
     margin: theme.spacing(2),
-    transition: 'transform .2s',
-  '&:hover': {
-    transform: 'scale(1.05)',
-  },
-  
+    transition: "transform .2s",
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
   },
   media: {
     height: 140,
+  },
+  image: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    transform: "translate(0,-10vh)",
+    zIndex: 1,
+    maxWidth: "30vw",
+    transition: 'transform 1s ease-in-out',
+    '&:hover': {
+      transform: 'rotate(-10deg) scale(1.2)',
+    }
   },
 }));
 
@@ -49,24 +62,38 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'PDAO宣傳網站',
-      description: '使用React Gatsby framework、Typescript，下製作的台大資管系程式競賽PDAO宣傳網站',
-      image: require('../images/PDAO.JPG'),
-      url: 'https://pdaowebsite.gatsbyjs.io/',
+      title: "PDAO宣傳網站",
+      description:
+        "使用React Gatsby framework、Typescript，下製作的台大資管系程式競賽PDAO宣傳網站",
+      image: require("../images/PDAO.JPG"),
+      url: "https://pdaowebsite.gatsbyjs.io/",
     },
     {
-      title: 'BUJIO APP',
-      description: '全端社群軟體，提供與好友、陌生人揪團、約會的媒合平台，熟悉使用 Redux.js、React Hooks',
-      image: require('../images/BUJIO.png'),
-      url: 'https://github.com/YouMingYeh/BUJIOAPP',
-    }
+      title: "BUJIO APP",
+      description:
+        "全端社群軟體，提供與好友、陌生人揪團、約會的媒合平台，熟悉使用 Redux.js、React Hooks",
+      image: require("../images/BUJIO.png"),
+      url: "https://github.com/YouMingYeh/BUJIOAPP",
+    },
   ];
 
   return (
     <div className={classes.root} id="projects">
-      <Typography variant="h2" component="h2" align="center" className={classes.title}>
-      Projects
-      </Typography>
+      <div>
+        <Typography
+          variant="h2"
+          component="h2"
+          align="center"
+          className={classes.title}
+        >
+          Projects
+          <img
+            src={require("../images/think.png")}
+            className={classes.image}
+          ></img>
+        </Typography>
+      </div>
+
       <Grid container justifyContent="center">
         {projects.map((project) => (
           <Grid item key={project.title}>
@@ -81,7 +108,11 @@ const Projects = () => {
                   <Typography gutterBottom variant="h5" component="h2">
                     {project.title}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
                     {project.description}
                   </Typography>
                 </CardContent>

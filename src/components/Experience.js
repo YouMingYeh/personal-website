@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
     backgroundColor: theme.palette.background.default,
     minHeight: "100vh",
-    
+    position: 'relative',
   },
   title: {
     marginBottom: theme.spacing(4),
@@ -75,9 +75,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 const Experience = () => {
   const classes = useStyles();
-
+  
   const experienceData = [
     {
       company: "臺大資管系全國程式競賽PDAO",

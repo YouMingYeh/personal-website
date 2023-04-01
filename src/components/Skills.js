@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     backgroundColor: theme.palette.background.default,
     minHeight: "100vh",
+    position: "relative"
   },
   title: {
     marginBottom: theme.spacing(4),
@@ -76,6 +77,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
+  image: {
+    maxWidth: '5rem',
+    transition: 'transform 1s ease-in-out',
+    '&:hover': {
+      transform: 'rotate(10deg) scale(1.2)',
+    }
+  }
 }));
 
 const Skills = () => {
@@ -239,14 +247,17 @@ const Skills = () => {
     ],
   };
 
+  const isMobile = window.innerWidth < 600;
   return (
     <div id="skills" className={classes.root}>
       <Container>
         <Typography className={classes.title} variant="h2" align="center">
+        {!isMobile && <img src={require('../images/watchthis.png')} className={classes.image}></img>}
           Skills
+          
         </Typography>
-        <Slider {...settings}>{renderSkills()}</Slider>
       </Container>
+      <Slider {...settings}>{renderSkills()}</Slider>
     </div>
   );
 };
