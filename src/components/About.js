@@ -1,41 +1,56 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container, Typography, Box } from '@material-ui/core';
-import Typed from 'react-typed';
-import myPhoto from '../images/myPhoto.JPG';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Container, Typography, Box, Icon } from "@material-ui/core";
+import Typed from "react-typed";
+import myPhoto from "../images/myPhoto.JPG";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: theme.spacing(10),
+    paddingTop: theme.spacing(8),
+    [theme.breakpoints.up("sm")]: {
+      paddingTop: theme.spacing(10),
+    },
+    [theme.breakpoints.up("md")]: {
+      paddingTop: theme.spacing(12),
+    },
+    [theme.breakpoints.up("lg")]: {
+      paddingTop: theme.spacing(14),
+    },
     backgroundColor: theme.palette.background.default,
-    minHeight: '100vh',
-    marginTop: theme.spacing(5)
+    minHeight: "100vh",
   },
   container: {
     marginBottom: theme.spacing(4),
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '20rem'
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "20rem",
   },
   title: {
     marginBottom: theme.spacing(4),
-    fontWeight: 'bold',
-    width: '80%',
+    fontWeight: "bold",
+    width: "80%",
+    fontSize: "3.5em"
   },
   paragraph: {
-    marginBottom: theme.spacing(2),
-    fontSize: '1.7rem'
+    marginBottom: theme.spacing(0),
+    fontSize: "1.7rem",
+    paddingBottom: theme.spacing(4)
+  },
+  important: {
+    fontWeight: "bold",
+    color: theme.palette.secondary.main,
   },
   photo: {
-    width: '20%',
-    maxWidth: '200px',
-    borderRadius: '10rem',
+    width: "20%",
+    maxWidth: "200px",
+    
+    borderRadius: "10rem",
     marginBottom: theme.spacing(4),
   },
   typed: {
-    color: theme.palette.primary.main
-  }
+    color: theme.palette.primary.main,
+  },
 }));
 
 const About = () => {
@@ -48,9 +63,14 @@ const About = () => {
           <img src={myPhoto} alt="My photo" className={classes.photo} />
 
           <Typography variant="h2" align="center" className={classes.title}>
-          <p>I am a </p>
+            <p>I am </p>
             <Typed
-              strings={[' College Student.', ' Frontend Learner.', ' UI Design Learner.']}
+              strings={[
+                "葉又銘 Yeh-YouMing",
+                "an Engineering Student.",
+                "a Frontend Developer.",
+                "an UI Designer.",
+              ]}
               typeSpeed={50}
               backSpeed={30}
               loop
@@ -58,10 +78,33 @@ const About = () => {
             />
           </Typography>
         </Box>
-        <Typography variant="body1" align="justify" className={classes.paragraph}>
-        您好，我是一名就讀於臺灣大學資訊管理學系大二的學生，對於前端網頁與軟體撰寫有濃厚的興趣，同時也修習過相關課程。在學期間，我製作了多個 side project 並持續改進與維護，期望透過這些經驗能夠為貴公司做出貢獻。
+        <Typography
+          variant="body1"
+          align="justify"
+          className={classes.paragraph}
+        >
+          <span className={classes.important} style={{ fontSize: "3rem" }}>
+            Hi there! 🙋‍♂️
+          </span>
+          <br></br>
+          <span>
+            A student studying{" "}
+            <span className={classes.important}>
+              Information Management at NTU.{" "}
+            </span>
+          </span>
+          <p>
+            Passionate about
+            <span className={classes.important}> Full Stack Web</span>
+            <span className={classes.important}>, Software</span> development,
+            and have taken relevant courses to hone my skills.
+          </p>
+          <p>
+            I've created several side projects 🚀 and continuously worked on
+            improving and maintaining them. 💻
+          </p>
+          
         </Typography>
-
       </Container>
     </div>
   );

@@ -9,13 +9,23 @@ import {
   Divider,
   Button,
 } from "@material-ui/core";
-import { Code, Storage, GitHub } from "@material-ui/icons";
+import { Code, Storage, GitHub, Facebook } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: theme.spacing(10),
+    paddingTop: theme.spacing(8),
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: theme.spacing(10),
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingTop: theme.spacing(12),
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingTop: theme.spacing(14),
+    },
     backgroundColor: theme.palette.background.default,
     minHeight: "100vh",
+
     
   },
   title: {
@@ -28,11 +38,16 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     border: `1px solid ${theme.palette.primary.main}`,
     boxShadow: theme.shadows[3],
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+
     transition: "box-shadow 0.2s ease-in-out",
     "&:hover": {
       boxShadow: theme.shadows[6],
       cursor: "pointer",
+      transform: 'scale(1.05)'
     },
+    textDecoration: "none"
   },
   experienceCardContent: {
     flexGrow: 1,
@@ -44,10 +59,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     marginBottom: theme.spacing(2),
+    fontSize: '2rem'
   },
   icon: {
     marginRight: theme.spacing(1),
-    fontSize: "3rem",
   },
   divider: {
     width: "100%",
@@ -68,7 +83,7 @@ const Experience = () => {
     {
       company: "臺大資管系全國程式競賽PDAO",
       position: "系統組",
-      icon: <Code />,
+      icon: "💻",
       link: "https://pdaowebsite.gatsbyjs.io/",
       description:
         "使用 Gatsby 框架、Typescript，以原生 HTML、CSS、JavaScript 語言撰寫。",
@@ -77,13 +92,23 @@ const Experience = () => {
     },
     {
       company: "Side Projects",
-      position: "大學生",
-      icon: <Code />,
+      position: "學生",
+      icon: "📂",
       link: "https://github.com/YouMingYeh",
       description:
         "製作多個Side Projects，包括網路社交軟體BUJIO、多個在學期間修課專案、個人網站",
       details:
         "熟悉各種前後端框架、第三方套件，並有全端專案製作經驗，擅長串接現成API",
+    },
+    {
+      company: "臺大資管新生迎新宿營",
+      position: "召部",
+      icon: "⛺",
+      link: "",
+      description:
+        "舉辦臺大資管新生迎新宿營",
+      details:
+        "透過舉辦活動學習管理團隊、與他人合作",
     },
   ];
 
@@ -92,7 +117,7 @@ const Experience = () => {
       <Typography variant="h2" align="center" className={classes.title}>
         Experience
       </Typography>
-      <Grid container spacing={3} justifyContent='center'>
+      <Grid container spacing={3} justifyContent='center' style={{flexWrap: 'wrap'}}>
         {experienceData.map((experience) => (
           <Grid item xs={12} sm={6} md={4} key={experience.company}>
             <Card
@@ -142,6 +167,17 @@ const Experience = () => {
           style={{ marginLeft: "10px" }}
         >
           Portfolio
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          endIcon={<Facebook />}
+          component="a"
+          href="https://www.facebook.com/profile.php?id=100010253504873"
+          target="_blank"
+          style={{ marginLeft: "10px" }}
+        >
+          Facebook
         </Button>
       </Box>
     </Box>

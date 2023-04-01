@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Grid, Paper } from "@material-ui/core";
+import { Typography, Paper } from "@material-ui/core";
 import { Code, Storage, GitHub } from "@material-ui/icons";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import Inventory2Icon from "@mui/icons-material/Inventory2";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import {Container, Card} from "@mui/material"
+import clsx from 'clsx'
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: theme.spacing(10),
+    paddingTop: theme.spacing(8),
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: theme.spacing(10),
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingTop: theme.spacing(12),
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingTop: theme.spacing(14),
+    },
     backgroundColor: theme.palette.background.default,
     minHeight: "100vh",
   },
   title: {
     marginBottom: theme.spacing(4),
     fontWeight: "bold",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   skillItem: {
     display: "flex",
@@ -26,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     transition: "all 0.3s ease-in-out", // add CSS transition
     transform: "scale(0.8)", // set initial scale
     opacity: 1, // set initial opacity
+    height: '30rem'
   },
   skillItemHovered: {
     transform: "scale(1)",
@@ -34,22 +51,29 @@ const useStyles = makeStyles((theme) => ({
   skillTitle: {
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
+    fontWeight: "bold",
     marginBottom: theme.spacing(2),
   },
   icon: {
     marginRight: theme.spacing(1),
-    fontSize: "3rem",
+    scale: '1.5'
   },
   itemsContainer: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    
+    justifyContent: "center"
   },
   item: {
     margin: theme.spacing(1),
     fontSize: "1.2rem",
   },
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }
 }));
 
 const Skills = () => {
@@ -81,61 +105,88 @@ const Skills = () => {
         "MUI",
         "Redux.js",
         "JSON Web Token",
-        "Multer",
-        "Bcrypt",
-        "JWT-decode",
-        "Mongoose",
+        "Webpack",
       ],
     },
   ];
-  
 
-  const [hoveredIndex, setHoveredIndex] = React.useState(null);
+  const [hoveredSkill, setHoveredSkill] = useState(null);
+
+  const handleSkillHover = (index) => {
+    setHoveredSkill(index);
+  };
+
+  const handleSkillLeave = () => {
+    setHoveredSkill(null);
+  };
+
+  const renderSkills = () => {
+    return skillsData.map((skill, index) => {
+      const isHovered = hoveredSkill === index;
+
+      return (
+        <Paper
+          key={skill.skill}
+          className={clsx(classes.skillItem, {
+            [classes.skillItemHovered]: isHovered,
+          })}
+          onMouseEnter={() => handleSkillHover(index)}
+          onMouseLeave={handleSkillLeave}
+        >
+          <div className={classes.skillTitle}>
+            {skill.icon && <span className={classes.icon}>{skill.icon}</span>}
+            <Typography variant="h6">{skill.skill}</Typography>
+          </div>
+          <div className={classes.itemsContainer}>
+            {skill.items.map((item) => (
+
+                <Typography
+                  key={item}
+                  className={classes.item}
+                  variant="body1"
+                  color={isHovered ? "secondary" : "textPrimary"}
+                >
+                  {item}
+                </Typography>
+
+            ))}
+          </div>
+        </Paper>
+      );
+    });
+  };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
   return (
-    <div className={classes.root} id="skills">
-      <Typography
-        variant="h2"
-        component="h2"
-        align="center"
-        className={classes.title}
-      >
-        Skills
-      </Typography>
-      <Grid container spacing={4} justifyContent='center'>
-        {skillsData.map((skill, index) => (
-          <Grid item xs={12} md={6} key={index}>
-            <Paper
-              elevation={3}
-              className={`${classes.skillItem} ${
-                hoveredIndex === index ? classes.skillItemHovered : classes.skillItem
-              }`}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div className={classes.skillTitle}>
-                {skill.icon}
-                </div>
-                <Typography variant="h5">
-                  
-                    <div className={classes.itemsContainer}>
-                      {skill.items.map((item, itemIndex) => (
-                        <Typography
-                          variant="subtitle1"
-                          key={itemIndex}
-                          className={classes.item}
-                        >
-                          {item}
-                        </Typography>
-                      ))}
-                    </div>
-                  
-                </Typography>
-              
-            </Paper>
-          </Grid>
-        ))}
-      </Grid>
+    <div id="skills" className={classes.root}>
+      <Container >
+        <Typography className={classes.title} variant="h2" align="center">
+          Skills
+        </Typography>
+        <Slider {...settings} >{renderSkills()}</Slider>
+      </Container>
     </div>
   );
 };

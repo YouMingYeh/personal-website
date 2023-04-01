@@ -5,7 +5,16 @@ import { useForm } from '@formspree/react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: theme.spacing(10),
+    paddingTop: theme.spacing(8),
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: theme.spacing(10),
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingTop: theme.spacing(12),
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingTop: theme.spacing(14),
+    },
     backgroundColor: theme.palette.background.default,
     minHeight: '100vh',
   },
@@ -21,6 +30,8 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiTextField-root': {
       marginBottom: theme.spacing(2),
     },
+    
+    
   },
 }));
 
@@ -36,6 +47,8 @@ const Contact = () => {
       <Typography variant="h2" component="h2" align="center" className={classes.title}>
         Contact Me
       </Typography>
+      <div>
+
       <form className={classes.form} noValidate autoComplete="off" onSubmit={submit}>
         {submitting ? (
           <Button disabled variant="contained" color="primary">
@@ -66,6 +79,7 @@ const Contact = () => {
           </>
         )}
       </form>
+      </div>
     </div>
   );
 };

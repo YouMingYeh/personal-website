@@ -13,7 +13,16 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: theme.spacing(10),
+    paddingTop: theme.spacing(8),
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: theme.spacing(10),
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingTop: theme.spacing(12),
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingTop: theme.spacing(14),
+    },
     backgroundColor: theme.palette.background.default,
     minHeight: '100vh',
   },
@@ -24,6 +33,11 @@ const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 345,
     margin: theme.spacing(2),
+    transition: 'transform .2s',
+  '&:hover': {
+    transform: 'scale(1.05)',
+  },
+  
   },
   media: {
     height: 140,
