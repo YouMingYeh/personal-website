@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     marginBottom: theme.spacing(2),
-    fontSize: '2rem'
+    fontSize: '2em'
   },
   icon: {
     marginRight: theme.spacing(1),
@@ -108,7 +108,7 @@ const Experience = () => {
       description:
         "舉辦臺大資管新生迎新宿營",
       details:
-        "透過舉辦活動學習管理團隊、與他人合作",
+        "組織跨系級、上百人參加的戶外迎新活動，準備期橫跨半年，透過舉辦活動學習管理團隊、與他人合作",
     },
   ];
 

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paragraph: {
     marginBottom: theme.spacing(0),
-    fontSize: "1.7rem",
+    fontSize: "1.7em",
     paddingBottom: theme.spacing(4)
   },
   important: {
