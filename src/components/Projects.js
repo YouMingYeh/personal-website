@@ -13,7 +13,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(4),
+    paddingTop: theme.spacing(10),
     backgroundColor: theme.palette.background.default,
     minHeight: '100vh',
   },
