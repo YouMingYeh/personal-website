@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     cursor: "pointer", // add cursor pointer to indicate hover state
     transition: "all 0.3s ease-in-out", // add CSS transition
-    transform: "scale(0.8)", // set initial scale
+    transform: "rotate(10deg) translateY(10px)", // set initial scale
     opacity: 1, // set initial opacity
     height: "30rem",
   },
