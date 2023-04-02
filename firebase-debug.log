@@ -1,0 +1,79 @@
+[debug] [2023-04-02T17:05:30.691Z] ----------------------------------------------------------------------
+[debug] [2023-04-02T17:05:30.694Z] Command:       /opt/homebrew/Cellar/node/19.8.1/bin/node /opt/homebrew/bin/firebase deploy
+[debug] [2023-04-02T17:05:30.694Z] CLI Version:   11.25.2
+[debug] [2023-04-02T17:05:30.694Z] Platform:      darwin
+[debug] [2023-04-02T17:05:30.694Z] Node Version:  v19.8.1
+[debug] [2023-04-02T17:05:30.694Z] Time:          Mon Apr 03 2023 01:05:30 GMT+0800 (Taipei Standard Time)
+[debug] [2023-04-02T17:05:30.695Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-02T17:05:30.739Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-02T17:05:30.739Z] > authorizing via signed-in user (ym911216@gmail.com)
+[debug] [2023-04-02T17:05:30.740Z] [iam] checking project yehyouming for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-04-02T17:05:30.740Z] > refreshing access token with scopes: []
+[debug] [2023-04-02T17:05:30.741Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-04-02T17:05:30.741Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-04-02T17:05:30.892Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-04-02T17:05:30.893Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-04-02T17:05:30.933Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/yehyouming:testIamPermissions [none]
+[debug] [2023-04-02T17:05:30.933Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/yehyouming:testIamPermissions x-goog-quota-user=projects/yehyouming
+[debug] [2023-04-02T17:05:30.934Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yehyouming:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-02T17:05:31.799Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/yehyouming:testIamPermissions 200
+[debug] [2023-04-02T17:05:31.799Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/yehyouming:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-02T17:05:31.800Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/yehyouming [none]
+[debug] [2023-04-02T17:05:32.099Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/yehyouming 200
+[debug] [2023-04-02T17:05:32.100Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/yehyouming {"projectId":"yehyouming","projectNumber":"992015593650","displayName":"yehyouming","name":"projects/yehyouming","resources":{"hostingSite":"yehyouming"},"state":"ACTIVE","etag":"1_bad63a57-d647-416a-8033-731ddb0ea61a"}
+[info] 
+[info] === Deploying to 'yehyouming'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-04-02T17:05:32.106Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yehyouming/versions [none]
+[debug] [2023-04-02T17:05:32.106Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yehyouming/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-04-02T17:05:32.955Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yehyouming/versions 200
+[debug] [2023-04-02T17:05:32.955Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yehyouming/versions {"name":"projects/992015593650/sites/yehyouming/versions/55c6603ec2f067cc","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[yehyouming]: beginning deploy... 
+[info] i  hosting[yehyouming]: found 25 files in build 
+[debug] [2023-04-02T17:05:32.970Z] [hosting] uploading with 200 concurrency
+[debug] [2023-04-02T17:05:33.190Z] [hosting] hash cache [YnVpbGQ] stored for 25 files
+[debug] [2023-04-02T17:05:33.190Z] [hosting][hash queue][FINAL] {"max":212,"min":12,"avg":30.8,"active":0,"complete":25,"success":25,"errored":0,"retried":0,"total":25,"elapsed":216}
+[debug] [2023-04-02T17:05:33.190Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/992015593650/sites/yehyouming/versions/55c6603ec2f067cc:populateFiles [none]
+[debug] [2023-04-02T17:05:33.190Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/992015593650/sites/yehyouming/versions/55c6603ec2f067cc:populateFiles {"files":{"/asset-manifest.json":"dd6d589f609ae99a5c827fffc754ba30ab67d7420fb776ba0e910cbd35d196d4","/robots.txt":"391d14b3c2f8c9143a27a28c7399585142228d4d1bdbe2c87ac946de411fa9a2","/index.html":"838dfa9fd24a182ab3f371f934c13d874d6bf9ade98c845bea754652076ee352","/static/css/main.f2cd37d2.css":"e70ef4d877ddb3eac0faab9e3a26eaeb160d8a6b9416b660668ba25aac7ffd7e","/static/js/main.6c214aa0.js.LICENSE.txt":"bea3f429a59030b16976b9f79fbb7906db8475bab9b11f2060520c67ccd15c18","/manifest.json":"101f1fbb2509aedf7e72cc92acef6606df44ec652b792a5719526df123fe53ad","/static/css/main.f2cd37d2.css.map":"c4c24b7132da44cff179193a5dbc9f3c94e3d7bb8d15f7203eb8e31d45095c25","/static/media/slick.2630a3e3eab21c607e21.svg":"dfcaf4b122493a401fefdf30d8d0fa438d8c2eae8c71798fe6e08b32f91dc0ff","/static/media/slick.295183786cd8a1389865.woff":"fa7f9b78472ea626c47416d73657b92922ffce922767a9fdca149292d7eaeaf0","/static/media/slick.a4e97f5a2a64f0ab1323.eot":"dc31d29e9ef5bdc1431085372877e0506db7654d9706b8a31103838650ee708c","/static/media/slick.c94f7671dcc99dce43e2.ttf":"2b2567cc103eb4aeb14648aaa15fcd8363d375bbc1c4e7b5f036c187088805a2","/static/media/BUJIO.335e752d4e4397179576.png":"78f277e001eb04de95194fc9ae2a64a417948305eb21ffb02dd91566e5b9da1a","/static/media/GitHub.63a78ed4baa43c498f4b.jpeg":"edf1a721f81111ee4741f3b897a3ff22da67c5474679e764838636e14dd836e7","/logo.png":"ceb542c469cd0c66740e9521e2c7930fd4f5e5ac747b069e7141e02844020342","/static/media/hi.30f8cd17bbbe0708379e.png":"58b08a99b05ad6462e4f007f2f1b21964173dd6727418c88ef4c9064021a7a1d","/static/media/callme.a92157ac6ce3babd37dc.png":"0797f761872331901db806c7d75cbb3b0a684974e8e6e3de6b3dab5874546612","/static/media/think.1a06a1e5b44da2b3021e.png":"b41a76606df2126f515f8d0c07c4b90841eecf199bbf2bab64908d23aaf688fa","/static/media/watchthis.2d35c6f70b00f05ff141.png":"cd8835903475bb428633d48eb94e769d13b92710479d46b79c5a17bcc9434513","/static/media/nice.26481e50c828147226fe.png":"241e724056f7a6538df61865241e844417a0b186fd6fe4d6434940a799938394","/static/media/hello.619177b425993b98142b.png":"d5e9e89ce7cc5181df246a164afa61a6d88340e639aad871c0e3e37f5b8cbcd9","/resume.pdf":"d5e10e800729af7a6d44e0e0e2cd53bbd1f3a005c65414b39c4ed1a0a3b88c46","/static/media/PDAO.74d1eb89db9ed7f1ca5d.JPG":"7670589ae5636692b0a7b102c5b01703fcd9e53cf93dbf0cd0c685e259c22c8b","/static/js/main.6c214aa0.js":"27ee4d54e9c929cbad4c2053bfd3007ee0db154a91d663d14d62adcae8294b7e","/static/media/myPhoto.aea95ffada5c30e623a9.png":"33102f87708f4ad51e10716682daa38485d7ad857920341b105bade18498c3a3","/static/js/main.6c214aa0.js.map":"2e8791a161bfeb57d89eb22269a192b4bd436c595e21f3151e92c875314c3f11"}}
+[debug] [2023-04-02T17:05:33.911Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/992015593650/sites/yehyouming/versions/55c6603ec2f067cc:populateFiles 200
+[debug] [2023-04-02T17:05:33.911Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/992015593650/sites/yehyouming/versions/55c6603ec2f067cc:populateFiles {"uploadRequiredHashes":["dd6d589f609ae99a5c827fffc754ba30ab67d7420fb776ba0e910cbd35d196d4","27ee4d54e9c929cbad4c2053bfd3007ee0db154a91d663d14d62adcae8294b7e","2e8791a161bfeb57d89eb22269a192b4bd436c595e21f3151e92c875314c3f11","838dfa9fd24a182ab3f371f934c13d874d6bf9ade98c845bea754652076ee352"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files"}
+[debug] [2023-04-02T17:05:33.913Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/dd6d589f609ae99a5c827fffc754ba30ab67d7420fb776ba0e910cbd35d196d4 [none]
+[debug] [2023-04-02T17:05:33.913Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/dd6d589f609ae99a5c827fffc754ba30ab67d7420fb776ba0e910cbd35d196d4 [stream]
+[debug] [2023-04-02T17:05:33.914Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/27ee4d54e9c929cbad4c2053bfd3007ee0db154a91d663d14d62adcae8294b7e [none]
+[debug] [2023-04-02T17:05:33.914Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/27ee4d54e9c929cbad4c2053bfd3007ee0db154a91d663d14d62adcae8294b7e [stream]
+[debug] [2023-04-02T17:05:33.915Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/2e8791a161bfeb57d89eb22269a192b4bd436c595e21f3151e92c875314c3f11 [none]
+[debug] [2023-04-02T17:05:33.915Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/2e8791a161bfeb57d89eb22269a192b4bd436c595e21f3151e92c875314c3f11 [stream]
+[debug] [2023-04-02T17:05:33.916Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/838dfa9fd24a182ab3f371f934c13d874d6bf9ade98c845bea754652076ee352 [none]
+[debug] [2023-04-02T17:05:33.916Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/838dfa9fd24a182ab3f371f934c13d874d6bf9ade98c845bea754652076ee352 [stream]
+[debug] [2023-04-02T17:05:33.917Z] [hosting][populate queue][FINAL] {"max":722,"min":722,"avg":722,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":727}
+[debug] [2023-04-02T17:05:33.917Z] [hosting] uploads queued: 4
+[debug] [2023-04-02T17:05:35.684Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/838dfa9fd24a182ab3f371f934c13d874d6bf9ade98c845bea754652076ee352 200
+[debug] [2023-04-02T17:05:35.685Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/838dfa9fd24a182ab3f371f934c13d874d6bf9ade98c845bea754652076ee352 [stream]
+[debug] [2023-04-02T17:05:35.695Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/dd6d589f609ae99a5c827fffc754ba30ab67d7420fb776ba0e910cbd35d196d4 200
+[debug] [2023-04-02T17:05:35.695Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/dd6d589f609ae99a5c827fffc754ba30ab67d7420fb776ba0e910cbd35d196d4 [stream]
+[debug] [2023-04-02T17:05:36.030Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/27ee4d54e9c929cbad4c2053bfd3007ee0db154a91d663d14d62adcae8294b7e 200
+[debug] [2023-04-02T17:05:36.030Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/27ee4d54e9c929cbad4c2053bfd3007ee0db154a91d663d14d62adcae8294b7e [stream]
+[debug] [2023-04-02T17:05:36.677Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/2e8791a161bfeb57d89eb22269a192b4bd436c595e21f3151e92c875314c3f11 200
+[debug] [2023-04-02T17:05:36.678Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/yehyouming/versions/55c6603ec2f067cc/files/2e8791a161bfeb57d89eb22269a192b4bd436c595e21f3151e92c875314c3f11 [stream]
+[debug] [2023-04-02T17:05:36.678Z] [hosting][upload queue][FINAL] {"max":2766,"min":1773,"avg":2110,"active":0,"complete":4,"success":4,"errored":0,"retried":0,"total":4,"elapsed":2766}
+[info] ✔  hosting[yehyouming]: file upload complete 
+[debug] [2023-04-02T17:05:36.678Z] [hosting] deploy completed after 3721ms
+[debug] [2023-04-02T17:05:36.680Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "site": "yehyouming"
+    },
+    "version": "projects/992015593650/sites/yehyouming/versions/55c6603ec2f067cc"
+  }
+]
+[info] i  hosting[yehyouming]: finalizing version... 
+[debug] [2023-04-02T17:05:36.682Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yehyouming/versions/55c6603ec2f067cc updateMask=status%2Cconfig
+[debug] [2023-04-02T17:05:36.683Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/yehyouming/versions/55c6603ec2f067cc {"status":"FINALIZED","config":{}}

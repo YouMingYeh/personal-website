@@ -91,7 +91,7 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "PDAO宣傳網站",
+      title: "PDAO Promotional Website",
       description:
       "The promotional website for the NTU Department of Information Management programming contest PDAO, created using the React Gatsby framework and TypeScript.",
       image: require("../images/PDAO.JPG"),
