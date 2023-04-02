@@ -31,13 +31,16 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
     fontWeight: "bold",
     position: "relative",
+    
   },
   card: {
     maxWidth: 345,
     margin: theme.spacing(2),
     transition: "transform .2s",
+    
     "&:hover": {
       transform: "scale(1.05)",
+      
     },
   },
   media: {
@@ -55,6 +58,11 @@ const useStyles = makeStyles((theme) => ({
     '&[data-animate="true"]': {
       transform: 'rotate(-10deg) scale(1.2)',
     }
+  },
+  gridContainer: {
+    alignItems: "center",
+    display: "flex",
+    justifyContent: "center",
   }
 }));
 
@@ -92,11 +100,27 @@ const Projects = () => {
     {
       title: "BUJIO APP",
       description:
-        "Full-stack community software that provides a matching platform for organizing group activities and dates with friends and strangers. Familiar with using Redux.js and React Hooks",
+        "Full-stack community software that provides a matching platform for organizing group activities and dates with friends and strangers. Familiar with using Redux.js and React Hooks.",
       image: require("../images/BUJIO.png"),
       url: "https://github.com/YouMingYeh/BUJIOAPP",
     },
+    {
+      title: "Task Manager",
+      description:
+        "An application that helps users manage GitHub tasks. Users can create, edit, or delete tasks (GitHub issues API) in the application.",
+      image: require("../images/GitHub.jpeg"),
+      url: "https://github.com/Dcard-Intern-Homework/TaskAPI",
+    },
+    {
+      title: "Personal Website",
+      description:
+        "Check LEARN MORE to view this personal website repo details!",
+      image: require("../images/hello.png"),
+      url: "https://github.com/YouMingYeh/Portfolio",
+    }
   ];
+
+  const isMobile = window.innerWidth < 1000;
 
   return (
     <div className={classes.root} id="projects">
@@ -116,9 +140,9 @@ const Projects = () => {
         </Typography>
       </div>
 
-      <Grid container justifyContent="center">
+      <Grid container justifyContent="center" alignItems="center" className={classes.gridContainer} style={{maxWidth: isMobile? '100vw': '75vw'}}>
         {projects.map((project) => (
-          <Grid item key={project.title}>
+          <Grid item key={project.title} >
             <Card className={classes.card}>
               <CardActionArea>
                 <CardMedia
