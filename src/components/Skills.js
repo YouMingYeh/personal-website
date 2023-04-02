@@ -243,7 +243,7 @@ const Skills = () => {
     ],
   };
 
-  const isMobile = window.innerWidth < 600;
+  const isMobile = window.innerWidth < 1000;
   return (
     <div id="skills" className={classes.root}>
       <Container>

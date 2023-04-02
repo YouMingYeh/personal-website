@@ -54,7 +54,7 @@ const Contact = () => {
   const [state, submit] = useForm('mnqygzeg');
   const { succeeded, submitting } = state;
 
-  const isMobile = window.innerWidth < 600;
+  const isMobile = window.innerWidth < 1000;
   return (
     <div className={classes.root} id="contact">
       <Typography variant="h2" component="h2" align="center" className={classes.title}>

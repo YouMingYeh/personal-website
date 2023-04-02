@@ -1,8 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Box, Icon } from "@material-ui/core";
+import { Container, Typography, Box, Icon, Button } from "@material-ui/core";
 import Typed from "react-typed";
 import myPhoto from "../images/myPhoto.png";
+import GetAppIcon from '@material-ui/icons/GetApp';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
     backgroundColor: theme.palette.background.default,
     minHeight: "100vh",
+    position: 'relative',
   },
   container: {
     marginBottom: theme.spacing(4),
@@ -54,16 +57,43 @@ const useStyles = makeStyles((theme) => ({
   },
   typed: {
     color: theme.palette.primary.main,
+
   },
+  download: {
+    position: "relative",
+    color: 'white',
+    width: 200,
+    height: 50,
+    fontSize: 25,
+    borderRadius: 20,
+
+    transform: 'translate(40vw, -20px) rotate(-10deg)',
+    fontWeight: "bold",
+    transition: "transform 1s ease-in-out",
+    backgroundColor: theme.palette.primary.main,
+    boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.3)",
+    '&:hover': {
+      backgroundColor: theme.palette.primary.main,
+      transform:'translate(40vw, -20px) rotate(-5deg) scale(1.05)',
+    }
+
+  }
 }));
 
 const About = () => {
   const classes = useStyles();
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.download = `yehyouming's_resume.pdf`;
+    link.href = "/resume.pdf";
+    link.click();
+  };
 
   return (
     <div className={classes.root} id="about">
       <Container maxWidth="md">
         <Box className={classes.container}>
+        
           <img src={myPhoto} alt="My photo" className={classes.photo} />
 
           <Typography variant="h2" align="center" className={classes.title}>
@@ -93,6 +123,7 @@ const About = () => {
             src={require("../images/hi.png")}
             style={{ height: "7rem" }}
           ></img>
+          
           <br></br>
           <span>
             A student studying{" "}
@@ -111,6 +142,10 @@ const About = () => {
             improving and maintaining them. 💻
           </p>
         </Typography>
+        <Button  onClick={downloadResume}  className={classes.download}>
+             Resume
+            <GetAppIcon />
+          </Button>
       </Container>
     </div>
   );

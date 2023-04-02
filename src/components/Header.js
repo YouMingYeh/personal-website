@@ -12,14 +12,16 @@ import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 
 
+
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
   },
   navLink: {
-    marginRight: theme.spacing(2),
-    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(1),
+    marginLeft: theme.spacing(1),
+
     color: "white",
     "&:hover": {
       color: theme.palette.secondary.main,
@@ -67,7 +69,10 @@ const Header = ({ setMode }) => {
     setMobileMenuAnchor(null);
   };
 
-  const isMobile = window.innerWidth < 600;
+  
+
+
+  const isMobile = window.innerWidth < 1000;
   return (
     <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
@@ -87,6 +92,8 @@ const Header = ({ setMode }) => {
           >
             Change Theme
           </Button>
+
+          
         </div>
 
         <div>

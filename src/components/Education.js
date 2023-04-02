@@ -99,7 +99,7 @@ const StickyNote = ({ courses }) => {
 
 const Education = () => {
   const classes = useStyles();
-  const isMobile = window.innerWidth < 600;
+  const isMobile = window.innerWidth < 1000;
   const education = [
     {
       school: "National Taiwan University",
