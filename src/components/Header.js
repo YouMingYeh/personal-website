@@ -98,7 +98,7 @@ const Header = ({ setMode }) => {
                 onClick={() => scrollToSection("about")}
                 className={classes.navLink}
               >
-                關於我
+                About me
               </Button>
               <Button
                 onClick={() => scrollToSection("projects")}

@@ -33,11 +33,19 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     maxWidth: '3em',
-    transition: 'transform 1s ease-in-out',
-    '&:hover': {
+    animation: '$rotateAndScale 2s ease-in-out infinite',
+  },
+  '@keyframes rotateAndScale': {
+    '0%': {
+      transform: 'rotate(0deg) scale(1)',
+    },
+    '50%': {
       transform: 'rotate(-10deg) scale(1.2)',
-    }
-  }
+    },
+    '100%': {
+      transform: 'rotate(0deg) scale(1)',
+    },
+  },
 }));
 
 const Contact = () => {

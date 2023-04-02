@@ -51,27 +51,48 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
     maxWidth: "30vw",
     transition: 'transform 1s ease-in-out',
-    '&:hover': {
+    // use a data attribute to identify the image
+    '&[data-animate="true"]': {
       transform: 'rotate(-10deg) scale(1.2)',
     }
-  },
+  }
 }));
 
 const Projects = () => {
   const classes = useStyles();
+  const imageRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // set data-animate attribute to true when image is in view
+          entry.target.setAttribute('data-animate', 'true');
+        } else {
+          entry.target.removeAttribute('data-animate');
+        }
+      });
+    });
+    observer.observe(imageRef.current);
+    
+    // cleanup
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const projects = [
     {
       title: "PDAO宣傳網站",
       description:
-        "使用React Gatsby framework、Typescript，下製作的台大資管系程式競賽PDAO宣傳網站",
+      "The promotional website for the NTU Department of Information Management programming contest PDAO, created using the React Gatsby framework and TypeScript.",
       image: require("../images/PDAO.JPG"),
       url: "https://pdaowebsite.gatsbyjs.io/",
     },
     {
       title: "BUJIO APP",
       description:
-        "全端社群軟體，提供與好友、陌生人揪團、約會的媒合平台，熟悉使用 Redux.js、React Hooks",
+        "Full-stack community software that provides a matching platform for organizing group activities and dates with friends and strangers. Familiar with using Redux.js and React Hooks",
       image: require("../images/BUJIO.png"),
       url: "https://github.com/YouMingYeh/BUJIOAPP",
     },
@@ -90,6 +111,7 @@ const Projects = () => {
           <img
             src={require("../images/think.png")}
             className={classes.image}
+            ref={imageRef}
           ></img>
         </Typography>
       </div>

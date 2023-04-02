@@ -79,10 +79,6 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     maxWidth: '5rem',
-    transition: 'transform 1s ease-in-out',
-    '&:hover': {
-      transform: 'rotate(10deg) scale(1.2)',
-    }
   }
 }));
 

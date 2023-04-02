@@ -31,12 +31,12 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     width: "70%",
     fontSize: "3.5em",
-    zIndex: 1
+    zIndex: 1,
   },
   paragraph: {
     marginBottom: theme.spacing(0),
     fontSize: "1.7em",
-    paddingBottom: theme.spacing(4)
+    paddingBottom: theme.spacing(4),
   },
   important: {
     fontWeight: "bold",
@@ -44,13 +44,13 @@ const useStyles = makeStyles((theme) => ({
   },
   photo: {
     width: "20%",
-    scale: 2,
+    scale: 1.8,
     borderRadius: "3rem",
     marginBottom: theme.spacing(4),
-    transition: 'transform 1s ease-in-out',
-    '&:hover': {
-      transform: 'rotate(10deg) scale(1.2)',
-    }
+    transition: "transform 1s ease-in-out",
+    "&:hover": {
+      transform: "rotate(10deg) scale(1.2)",
+    },
   },
   typed: {
     color: theme.palette.primary.main,
@@ -87,10 +87,12 @@ const About = () => {
           align="justify"
           className={classes.paragraph}
         >
-          <span className={classes.important} style={{ fontSize: "3rem" }}>
-            Hi there! 
-          </span>
-          <img src={require('../images/hi.png')} style={{height: '7rem'}}></img>
+          <Typed strings={["<span >Hi there!</span>"]} typeSpeed={50} contentType="html" className={classes.important} style={{ fontSize: '3rem' }} onComplete={(self)=>self.cursor.remove()}/>
+          
+          <img
+            src={require("../images/hi.png")}
+            style={{ height: "7rem" }}
+          ></img>
           <br></br>
           <span>
             A student studying{" "}
@@ -108,7 +110,6 @@ const About = () => {
             I've created several side projects 🚀 and continuously worked on
             improving and maintaining them. 💻
           </p>
-          
         </Typography>
       </Container>
     </div>

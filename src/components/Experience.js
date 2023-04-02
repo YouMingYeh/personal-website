@@ -139,7 +139,8 @@ const Experience = () => {
                 <Typography variant="body1" align="center">
                   {experience.description}
                 </Typography>
-                <Typography variant="body2" align="center">
+                <Divider style={{marginTop: '2em'}} />
+                <Typography variant="body2" align="start">
                   {experience.details}
                 </Typography>
               </CardContent>
