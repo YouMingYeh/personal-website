@@ -41,12 +41,14 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     cursor: "pointer", // add cursor pointer to indicate hover state
     transition: "all 0.3s ease-in-out", // add CSS transition
-    transform: "rotate(10deg) translateY(10px)", // set initial scale
+    scale: 0.8, // set initial scale
     opacity: 1, // set initial opacity
     height: "30rem",
+    borderRadius: "50px",
   },
   skillItemHovered: {
-    transform: "scale(1)",
+    transform: "rotate(5deg) translateY(-30px)",
+    boxShadow: `8px 20px ${theme.palette.primary.main}`,
     opacity: 1,
   },
   skillTitle: {
@@ -67,9 +69,9 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap"
   },
   item: {
-    margin: theme.spacing(),
+    margin: theme.spacing(2),
     height: '5rem',
-    width: '5rem',
+
     
   },
   container: {

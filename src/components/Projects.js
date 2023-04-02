@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 345,
     margin: theme.spacing(2),
     transition: "transform .2s",
-    
+    borderRadius: '20px',
     "&:hover": {
       transform: "scale(1.05)",
       

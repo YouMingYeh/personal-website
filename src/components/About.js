@@ -3,8 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Container, Typography, Box, Icon, Button } from "@material-ui/core";
 import Typed from "react-typed";
 import myPhoto from "../images/myPhoto.png";
-import GetAppIcon from '@material-ui/icons/GetApp';
-
+import GetAppIcon from "@material-ui/icons/GetApp";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
     backgroundColor: theme.palette.background.default,
     minHeight: "100vh",
-    position: 'relative',
+    position: "relative",
   },
   container: {
     marginBottom: theme.spacing(4),
@@ -36,8 +35,7 @@ const useStyles = makeStyles((theme) => ({
     width: "70%",
     fontSize: "3em",
     zIndex: 1,
-    transform: 'translateX(-5vw)'
-    
+    transform: "translateX(-5vw)",
   },
   paragraph: {
     marginBottom: theme.spacing(0),
@@ -53,34 +51,48 @@ const useStyles = makeStyles((theme) => ({
     scale: 1.8,
     borderRadius: "3rem",
     marginBottom: theme.spacing(4),
-    transition: "transform 1s ease-in-out",
-    "&:hover": {
-      transform: "rotate(10deg) scale(1.2)",
-    },
+    transition: "transform 1s ease-in-out"
   },
   typed: {
     color: theme.palette.primary.main,
-    
   },
   download: {
     position: "relative",
-    color: 'white',
+    color: "white",
     width: 200,
     height: 50,
     fontSize: 25,
     borderRadius: 20,
 
-    transform: 'translate(40vw, -20px) rotate(-10deg)',
+    transform: "translate(40vw, -20px) rotate(-10deg)",
     fontWeight: "bold",
-    transition: "transform 1s ease-in-out",
+    transition: "all 1s ease-in-out",
     backgroundColor: theme.palette.primary.main,
-    boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.3)",
-    '&:hover': {
+    "&:hover": {
       backgroundColor: theme.palette.primary.main,
-      transform:'translate(40vw, -20px) rotate(-5deg) scale(1.05)',
-    }
-
-  }
+      transform: "translate(40vw, -20px) rotate(-5deg) scale(1.05)",
+      boxShadow: `4px 4px ${theme.palette.secondary.main}`,
+    },
+  },
+  rocket: {
+    cursor: "pointer",
+    transition: "transform 0.3s ease-in-out",
+    padding: 0,
+    border: "none",
+    background: "none",
+    fontSize: "30px",
+    "&.fly": {
+      animation: "$fly 1s linear",
+      animationFillMode: "forwards",
+    },
+  },
+  "@keyframes fly": {
+    "0%": {
+    },
+    "100%": {
+      transform: "rotate(-45deg) translateX(20vw) translateY(-100vh)",
+    },
+  },
 }));
 
 const About = () => {
@@ -92,15 +104,14 @@ const About = () => {
     link.click();
   };
 
+  const [isFlying, setIsFlying] = React.useState(false);
+
   const isMobile = window.innerWidth < 1000;
 
   return (
     <div className={classes.root} id="about">
       <Container maxWidth="md">
         <Box className={classes.container}>
-        
-          
-
           <Typography variant="h2" align="start" className={classes.title}>
             <p>I am </p>
             <Typed
@@ -115,23 +126,32 @@ const About = () => {
               backDelay={1500}
               loop
               className={classes.typed}
-              style={{whiteSpace: !isMobile?'nowrap': 'wrap'}}
+              style={{ whiteSpace: !isMobile ? "nowrap" : "wrap" }}
             />
           </Typography>
-          {!isMobile && <img src={myPhoto} alt="My photo" className={classes.photo} />}
+          {!isMobile && (
+            <img src={myPhoto} alt="My photo" className={classes.photo} />
+          )}
         </Box>
         <Typography
           variant="body1"
           align="justify"
           className={classes.paragraph}
         >
-          <Typed strings={["<span >Hi there!</span>"]} typeSpeed={50} contentType="html" className={classes.important} style={{ fontSize: '2.5rem' }} onComplete={(self)=>self.cursor.remove()}/>
-          
+          <Typed
+            strings={["<span >Hi there!</span>"]}
+            typeSpeed={50}
+            contentType="html"
+            className={classes.important}
+            style={{ fontSize: "2.5rem" }}
+            onComplete={(self) => self.cursor.remove()}
+          />
+
           <img
             src={require("../images/hi.png")}
             style={{ height: "7rem" }}
           ></img>
-          
+
           <br></br>
           <span>
             A student studying{" "}
@@ -146,14 +166,22 @@ const About = () => {
             and have taken relevant courses to hone my skills.
           </p>
           <p>
-            I've created several side projects 🚀 and continuously worked on
-            improving and maintaining them. 💻
+            I've created several side projects{" "}
+            <button
+              className={`${classes.rocket} ${isFlying ? "fly" : ""}`}
+              onClick={() => {
+                setIsFlying(true);
+              }}
+            >
+              🚀
+            </button>{" "}
+            and continuously worked on improving and maintaining them. 💻
           </p>
         </Typography>
-        <Button  onClick={downloadResume}  className={classes.download}>
-             Resume
-            <GetAppIcon />
-          </Button>
+        <Button onClick={downloadResume} className={classes.download}>
+          Resume
+          <GetAppIcon />
+        </Button>
       </Container>
     </div>
   );

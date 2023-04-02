@@ -39,12 +39,12 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[3],
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-
-    transition: "box-shadow 0.2s ease-in-out",
+    borderRadius: '30px',
+    transition: "all 0.3s ease-in-out",
     "&:hover": {
-      boxShadow: theme.shadows[6],
       cursor: "pointer",
-      transform: 'scale(1.05)'
+      transform: "rotate(3deg) translateY(-20px)",
+      boxShadow: `8px 16px ${theme.palette.primary.main}`,
     },
     textDecoration: "none"
   },

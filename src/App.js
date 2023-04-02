@@ -50,7 +50,7 @@ function App() {
           },
         },
         typography: {
-          fontFamily: 'BlinkMacSystemFont',
+          fontFamily: "Gill Sans",
         }
       });
     }

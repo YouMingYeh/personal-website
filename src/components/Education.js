@@ -62,11 +62,10 @@ const useStyles = makeStyles((theme) => ({
     width: 250,
     zIndex: 1,
     boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.3)",
-    transform: "rotate(5deg)",
-    transition: "transform 0.2s ease-in-out",
+    transition: "all 0.2s ease-in-out",
     "&:hover": {
-      transform: "rotate(10deg)",
-      boxShadow: "4px 4px 20px rgba(0, 0, 0, 0.5)",
+      boxShadow: `4px 4px ${theme.palette.secondary.main}`,
+      scale: 1.05
     },
   },
 }));
@@ -82,7 +81,7 @@ const StickyNote = ({ courses }) => {
           style={{
             top: 10 + index * 5 + "em",
             left: 5+ index * Math.floor(Math.random()*5) + "em",
-            transform: `rotate(${Math.floor(Math.random() * 20) - 10}deg)`,
+            transform: `rotate(${Math.floor(Math.random() * 10) - 5}deg)`,
           }}
         >
           <Typography variant="h6" component="h3" color="white">
@@ -125,6 +124,10 @@ const Education = () => {
       name: "Programming Design",
       level: "A+",
     },
+    {
+      name: "Linear Algebra",
+      level: "A+",
+    }
   ];
 
   return (
