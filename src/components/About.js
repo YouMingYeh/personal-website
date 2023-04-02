@@ -30,11 +30,14 @@ const useStyles = makeStyles((theme) => ({
     height: "20rem",
   },
   title: {
+    margin: 0,
     marginBottom: theme.spacing(4),
     fontWeight: "bold",
     width: "70%",
-    fontSize: "3.5em",
+    fontSize: "3em",
     zIndex: 1,
+    transform: 'translateX(-5vw)'
+    
   },
   paragraph: {
     marginBottom: theme.spacing(0),
@@ -57,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
   typed: {
     color: theme.palette.primary.main,
-
+    
   },
   download: {
     position: "relative",
@@ -89,14 +92,16 @@ const About = () => {
     link.click();
   };
 
+  const isMobile = window.innerWidth < 1000;
+
   return (
     <div className={classes.root} id="about">
       <Container maxWidth="md">
         <Box className={classes.container}>
         
-          <img src={myPhoto} alt="My photo" className={classes.photo} />
+          
 
-          <Typography variant="h2" align="center" className={classes.title}>
+          <Typography variant="h2" align="start" className={classes.title}>
             <p>I am </p>
             <Typed
               strings={[
@@ -107,17 +112,20 @@ const About = () => {
               ]}
               typeSpeed={50}
               backSpeed={30}
+              backDelay={1500}
               loop
               className={classes.typed}
+              style={{whiteSpace: !isMobile?'nowrap': 'wrap'}}
             />
           </Typography>
+          {!isMobile && <img src={myPhoto} alt="My photo" className={classes.photo} />}
         </Box>
         <Typography
           variant="body1"
           align="justify"
           className={classes.paragraph}
         >
-          <Typed strings={["<span >Hi there!</span>"]} typeSpeed={50} contentType="html" className={classes.important} style={{ fontSize: '3rem' }} onComplete={(self)=>self.cursor.remove()}/>
+          <Typed strings={["<span >Hi there!</span>"]} typeSpeed={50} contentType="html" className={classes.important} style={{ fontSize: '2.5rem' }} onComplete={(self)=>self.cursor.remove()}/>
           
           <img
             src={require("../images/hi.png")}

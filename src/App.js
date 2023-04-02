@@ -32,7 +32,7 @@ function App() {
           },
         },
         typography: {
-          fontFamily: 'BlinkMacSystemFont',
+          fontFamily: "monospace"
         }
       });
     }
