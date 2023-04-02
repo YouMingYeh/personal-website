@@ -100,7 +100,7 @@ const About = () => {
             <p>I am </p>
             <Typed
               strings={[
-                "葉又銘 Yeh-YouMing",
+                "葉又銘 You-Ming Yeh",
                 "an Engineering Student.",
                 "a Frontend Developer.",
                 "an UI Designer.",
