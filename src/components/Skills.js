@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     backgroundColor: theme.palette.background.default,
     minHeight: "100vh",
-    position: "relative"
+    position: "relative",
   },
   title: {
     marginBottom: theme.spacing(4),
@@ -66,13 +66,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
   },
   item: {
     margin: theme.spacing(2),
-    height: '5rem',
-
-    
+    height: "5rem",
   },
   container: {
     display: "flex",
@@ -80,8 +78,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   image: {
-    maxWidth: '5rem',
-  }
+    maxWidth: "5rem",
+  },
 }));
 
 const Skills = () => {
@@ -94,32 +92,39 @@ const Skills = () => {
       items: [
         {
           name: "HTML",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png",
         },
         {
           name: "CSS",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/240px-CSS3_logo_and_wordmark.svg.png",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/240px-CSS3_logo_and_wordmark.svg.png",
         },
         {
           name: "Javascript",
-          image: "https://static.javatpoint.com/images/javascript/javascript_logo.png",
+          image:
+            "https://static.javatpoint.com/images/javascript/javascript_logo.png",
         },
         {
           name: "TypeScript",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
         },
         {
           name: "C++",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png"
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png",
         },
         {
           name: "C",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_C_Programming_Language_logo.svg/1200px-The_C_Programming_Language_logo.svg.png"
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/The_C_Programming_Language_logo.svg/1200px-The_C_Programming_Language_logo.svg.png",
         },
         {
           name: "Python",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"
-        }
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
+        },
       ],
     },
     {
@@ -128,11 +133,13 @@ const Skills = () => {
       items: [
         {
           name: "React",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
         },
         {
           name: "Redux",
-          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEW62HQELDScDqni-pTeCH9LWRb8FPxRchvSeaPkfjmn_LntMd3A8m8UdTJMrRSMkopc&usqp=CAU",
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEW62HQELDScDqni-pTeCH9LWRb8FPxRchvSeaPkfjmn_LntMd3A8m8UdTJMrRSMkopc&usqp=CAU",
         },
         {
           name: "Material-UI",
@@ -140,7 +147,8 @@ const Skills = () => {
         },
         {
           name: "React Native",
-          image: "https://www.datocms-assets.com/45470/1631026680-logo-react-native.png",
+          image:
+            "https://www.datocms-assets.com/45470/1631026680-logo-react-native.png",
         },
       ],
     },
@@ -150,7 +158,8 @@ const Skills = () => {
       items: [
         {
           name: "Node.js",
-          image: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
         },
         {
           name: "Express",
@@ -158,9 +167,9 @@ const Skills = () => {
         },
         {
           name: "MongoDB & Mongoose",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Mongodb.png/1200px-Mongodb.png",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Mongodb.png/1200px-Mongodb.png",
         },
-
       ],
     },
     {
@@ -169,16 +178,19 @@ const Skills = () => {
       items: [
         {
           name: "Git",
-          image: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+          image:
+            "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
         },
         {
           name: "GitHub",
-          image: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+          image:
+            "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
         },
         {
           name: "RESTful API",
-          image: "https://www.payoda.com/wp-content/uploads/2021/05/1_mbP4Bjrs8Hshx7IgjsUNSg.jpeg"
-        }
+          image:
+            "https://www.payoda.com/wp-content/uploads/2021/05/1_mbP4Bjrs8Hshx7IgjsUNSg.jpeg",
+        },
       ],
     },
   ];
@@ -213,7 +225,11 @@ const Skills = () => {
           <div className={classes.itemsContainer}>
             {skill.items.map((item) => (
               <Tooltip title={item.name}>
-                <img className={classes.item} src={item.image} alt={item.name} />
+                <img
+                  className={classes.item}
+                  src={item.image}
+                  alt={item.name}
+                />
               </Tooltip>
             ))}
           </div>
@@ -250,9 +266,13 @@ const Skills = () => {
     <div id="skills" className={classes.root}>
       <Container>
         <Typography className={classes.title} variant="h2" align="center">
-        {!isMobile && <img src={require('../images/watchthis.png')} className={classes.image}></img>}
+          {!isMobile && (
+            <img
+              src={require("../images/watchthis.png")}
+              className={classes.image}
+            ></img>
+          )}
           Skills
-          
         </Typography>
       </Container>
       <Slider {...settings}>{renderSkills()}</Slider>

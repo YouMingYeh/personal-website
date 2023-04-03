@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     scale: 1.8,
     borderRadius: "3rem",
     marginBottom: theme.spacing(4),
-    transition: "transform 1s ease-in-out"
+    transition: "transform 1s ease-in-out",
   },
   typed: {
     color: theme.palette.primary.main,
@@ -87,8 +87,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   "@keyframes fly": {
-    "0%": {
-    },
+    "0%": {},
     "100%": {
       transform: "rotate(-45deg) translateX(20vw) translateY(-100vh)",
     },

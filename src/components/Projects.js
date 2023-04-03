@@ -31,16 +31,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
     fontWeight: "bold",
     position: "relative",
-    
   },
   card: {
     maxWidth: 345,
     margin: theme.spacing(2),
     transition: "transform .2s",
-    borderRadius: '20px',
+    borderRadius: "20px",
     "&:hover": {
       transform: "scale(1.05)",
-      
     },
   },
   media: {
@@ -53,17 +51,17 @@ const useStyles = makeStyles((theme) => ({
     transform: "translate(0,-10vh)",
     zIndex: 1,
     maxWidth: "30vw",
-    transition: 'transform 1s ease-in-out',
+    transition: "transform 1s ease-in-out",
     // use a data attribute to identify the image
     '&[data-animate="true"]': {
-      transform: 'rotate(-10deg) scale(1.2)',
-    }
+      transform: "rotate(-10deg) scale(1.2)",
+    },
   },
   gridContainer: {
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
-  }
+  },
 }));
 
 const Projects = () => {
@@ -75,14 +73,14 @@ const Projects = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // set data-animate attribute to true when image is in view
-          entry.target.setAttribute('data-animate', 'true');
+          entry.target.setAttribute("data-animate", "true");
         } else {
-          entry.target.removeAttribute('data-animate');
+          entry.target.removeAttribute("data-animate");
         }
       });
     });
     observer.observe(imageRef.current);
-    
+
     // cleanup
     return () => {
       observer.disconnect();
@@ -93,7 +91,7 @@ const Projects = () => {
     {
       title: "PDAO Promotional Website",
       description:
-      "The promotional website for the NTU Department of Information Management programming contest PDAO, created using the React Gatsby framework and TypeScript.",
+        "The promotional website for the NTU Department of Information Management programming contest PDAO, created using the React Gatsby framework and TypeScript.",
       image: require("../images/PDAO.JPG"),
       url: "https://pdaowebsite.gatsbyjs.io/",
     },
@@ -117,7 +115,7 @@ const Projects = () => {
         "Check LEARN MORE to view this personal website repo details!",
       image: require("../images/hello.png"),
       url: "https://github.com/YouMingYeh/Portfolio",
-    }
+    },
   ];
 
   const isMobile = window.innerWidth < 1000;
@@ -140,9 +138,15 @@ const Projects = () => {
         </Typography>
       </div>
 
-      <Grid container justifyContent="center" alignItems="center" className={classes.gridContainer} style={{maxWidth: isMobile? '100vw': '75vw'}}>
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        className={classes.gridContainer}
+        style={{ maxWidth: isMobile ? "100vw" : "75vw" }}
+      >
         {projects.map((project) => (
-          <Grid item key={project.title} >
+          <Grid item key={project.title}>
             <Card className={classes.card}>
               <CardActionArea>
                 <CardMedia

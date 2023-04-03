@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     transition: "all 0.2s ease-in-out",
     "&:hover": {
       boxShadow: `4px 4px ${theme.palette.secondary.main}`,
-      scale: 1.05
+      scale: 1.05,
     },
   },
 }));
@@ -80,7 +80,7 @@ const StickyNote = ({ courses }) => {
           className={classes.stickyNote}
           style={{
             top: 10 + index * 5 + "em",
-            left: 5+ index * Math.floor(Math.random()*5) + "em",
+            left: 5 + index * Math.floor(Math.random() * 5) + "em",
             transform: `rotate(${Math.floor(Math.random() * 10) - 5}deg)`,
           }}
         >
@@ -127,7 +127,7 @@ const Education = () => {
     {
       name: "Linear Algebra",
       level: "A+",
-    }
+    },
   ];
 
   return (

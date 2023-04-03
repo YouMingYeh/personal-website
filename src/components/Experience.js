@@ -14,18 +14,18 @@ import { Code, Storage, GitHub, Facebook } from "@material-ui/icons";
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: theme.spacing(8),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       paddingTop: theme.spacing(10),
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up("md")]: {
       paddingTop: theme.spacing(12),
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up("lg")]: {
       paddingTop: theme.spacing(14),
     },
     backgroundColor: theme.palette.background.default,
     minHeight: "100vh",
-    position: 'relative',
+    position: "relative",
   },
   title: {
     marginBottom: theme.spacing(4),
@@ -39,14 +39,14 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[3],
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    borderRadius: '30px',
+    borderRadius: "30px",
     transition: "all 0.3s ease-in-out",
     "&:hover": {
       cursor: "pointer",
       transform: "rotate(3deg) translateY(-20px)",
       boxShadow: `8px 16px ${theme.palette.primary.main}`,
     },
-    textDecoration: "none"
+    textDecoration: "none",
   },
   experienceCardContent: {
     flexGrow: 1,
@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     marginBottom: theme.spacing(2),
-    fontSize: '2em'
+    fontSize: "2em",
   },
   icon: {
     marginRight: theme.spacing(1),
@@ -75,11 +75,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
 const Experience = () => {
   const classes = useStyles();
-  
+
   const experienceData = [
     {
       company: "臺大資管系全國程式競賽PDAO",
@@ -106,8 +104,7 @@ const Experience = () => {
       position: "召部",
       icon: "⛺",
       link: "",
-      description:
-        "舉辦臺大資管新生迎新宿營",
+      description: "舉辦臺大資管新生迎新宿營",
       details:
         "組織跨系級、上百人參加的戶外迎新活動，準備期橫跨半年，透過舉辦活動學習管理團隊、與他人合作",
     },
@@ -118,7 +115,12 @@ const Experience = () => {
       <Typography variant="h2" align="center" className={classes.title}>
         Experience
       </Typography>
-      <Grid container spacing={3} justifyContent='center' style={{flexWrap: 'wrap'}}>
+      <Grid
+        container
+        spacing={3}
+        justifyContent="center"
+        style={{ flexWrap: "wrap" }}
+      >
         {experienceData.map((experience) => (
           <Grid item xs={12} sm={6} md={4} key={experience.company}>
             <Card
@@ -139,7 +141,7 @@ const Experience = () => {
                 <Typography variant="body1" align="center">
                   {experience.description}
                 </Typography>
-                <Divider style={{marginTop: '2em'}} />
+                <Divider style={{ marginTop: "2em" }} />
                 <Typography variant="body2" align="start">
                   {experience.details}
                 </Typography>

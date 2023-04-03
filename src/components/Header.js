@@ -11,8 +11,6 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 
-
-
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     display: "flex",
@@ -33,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
     padding: 0,
-    maxWidth: theme.spacing(6)
+    maxWidth: theme.spacing(6),
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -69,31 +67,25 @@ const Header = ({ setMode }) => {
     setMobileMenuAnchor(null);
   };
 
-  
-
-
   const isMobile = window.innerWidth < 1000;
   return (
     <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
-        <div style={{display: 'flex'}}>
+        <div style={{ display: "flex" }}>
           <img
             onClick={() => scrollToSection("about")}
             className={classes.img}
-            src={require('../images/nice.png')}
-          >
-          </img>
+            src={require("../images/nice.png")}
+          ></img>
           <Button
             onClick={() => {
               setMode((prev) => !prev);
             }}
             className={classes.menuButton}
-            variant='contained'
+            variant="contained"
           >
             Change Theme
           </Button>
-
-          
         </div>
 
         <div>
