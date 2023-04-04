@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { createTheme } from "@material-ui/core/styles";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import Header from "./components/Header";
@@ -9,24 +9,53 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import { createDarkTheme, createLightTheme } from "./themes";
+import { HashLoader } from "react-spinners";
+
+const override = {
+  position:"absolute",
+   top:"50%",
+    left:"50%",
+    transform: "translate(-50%, -50%)"
+};
 
 function App() {
   const [mode, setMode] = useState(true);
+  let [loading, setLoading] = useState(true);
 
   const theme = useMemo(() => {
     return mode ? createDarkTheme() : createLightTheme();
   }, [mode]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header setMode={setMode} />
-      <About />
-      <Projects />
-      <Skills />
-      <Experience />
-      <Education />
-      <Contact />
+      {loading ? (<div style={{
+        position: "absolute",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        height: "100%",
+      }}>
+        <HashLoader loading={loading} cssOverride={override} size={150} />
+      </div>
+      ) : (
+        <>
+          <Header setMode={setMode} />
+          <About />
+          <Projects />
+          <Skills />
+          <Experience />
+          <Education />
+          <Contact />
+        </>
+      )}
+
       <div
         id="watermark"
         style={{
