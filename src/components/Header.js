@@ -8,10 +8,8 @@ import {
   Menu,
   MenuItem,
 } from "@material-ui/core";
-import {useStyles} from "./styles/HeaderStyles";
+import { useStyles } from "./styles/HeaderStyles";
 import MenuIcon from "@material-ui/icons/Menu";
-
-
 
 const Header = ({ setMode }) => {
   const classes = useStyles();
@@ -94,7 +92,7 @@ const Header = ({ setMode }) => {
               <Button
                 onClick={() => scrollToSection("contact")}
                 variant="contained"
-                color="secondary"
+                className={classes.menuButton}
               >
                 Contact
               </Button>

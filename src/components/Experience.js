@@ -12,7 +12,6 @@ import {
 import { Code, Storage, GitHub, Facebook } from "@material-ui/icons";
 import { useStyles } from "./styles/ExperienceStyles";
 
-
 const Experience = () => {
   const classes = useStyles();
 
@@ -96,6 +95,7 @@ const Experience = () => {
           component="a"
           href="https://github.com/yourusername"
           target="_blank"
+          className={classes.button}
         >
           GitHub
         </Button>
@@ -107,6 +107,7 @@ const Experience = () => {
           href="https://yehyouming.web.app/"
           target="_blank"
           style={{ marginLeft: "10px" }}
+          className={classes.button}
         >
           Portfolio
         </Button>
@@ -118,6 +119,7 @@ const Experience = () => {
           href="https://www.facebook.com/profile.php?id=100010253504873"
           target="_blank"
           style={{ marginLeft: "10px" }}
+          className={classes.button}
         >
           Facebook
         </Button>

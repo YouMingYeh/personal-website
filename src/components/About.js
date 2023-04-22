@@ -20,7 +20,7 @@ const About = () => {
 
   return (
     <div className={classes.root} id="about">
-      <Container maxWidth="md">
+      <Container>
         <Box className={classes.container}>
           <Typography variant="h2" align="start" className={classes.title}>
             <p>I am </p>
@@ -88,7 +88,7 @@ const About = () => {
             and continuously worked on improving and maintaining them. 💻
           </p>
         </Typography>
-        <Button onClick={downloadResume} className={classes.download}>
+        <Button onClick={downloadResume} className={classes.resume}>
           Resume
           <GetAppIcon />
         </Button>

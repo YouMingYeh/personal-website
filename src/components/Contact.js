@@ -3,8 +3,6 @@ import { useStyles } from "./styles/ContactStyles";
 import { Typography, TextField, Button } from "@material-ui/core";
 import { useForm } from "@formspree/react";
 
-
-
 const Contact = () => {
   const classes = useStyles();
 
@@ -81,7 +79,12 @@ const Contact = () => {
                 required
                 name="message"
               />
-              <Button type="submit" variant="contained" color="primary">
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                className={classes.button}
+              >
                 Send
               </Button>
             </>

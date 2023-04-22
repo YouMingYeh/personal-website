@@ -12,49 +12,31 @@ import { createDarkTheme, createLightTheme } from "./themes";
 import { HashLoader } from "react-spinners";
 
 const override = {
-  position:"absolute",
-   top:"50%",
-    left:"50%",
-    transform: "translate(-50%, -50%)"
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
 };
 
 function App() {
   const [mode, setMode] = useState(true);
-  let [loading, setLoading] = useState(true);
 
   const theme = useMemo(() => {
     return mode ? createDarkTheme() : createLightTheme();
   }, [mode]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {loading ? (<div style={{
-        position: "absolute",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        height: "100%",
-      }}>
-        <HashLoader loading={loading} cssOverride={override} size={150} />
-      </div>
-      ) : (
-        <>
-          <Header setMode={setMode} />
-          <About />
-          <Projects />
-          <Skills />
-          <Experience />
-          <Education />
-          <Contact />
-        </>
-      )}
+      <>
+        <Header setMode={setMode} />
+        <About />
+        <Projects />
+        <Skills />
+        <Experience />
+        <Education />
+        <Contact />
+      </>
 
       <div
         id="watermark"

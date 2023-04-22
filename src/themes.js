@@ -40,4 +40,4 @@ const createLightTheme = () => {
   });
 };
 
-export {createDarkTheme, createLightTheme}
+export { createDarkTheme, createLightTheme };

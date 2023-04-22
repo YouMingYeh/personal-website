@@ -10,8 +10,7 @@ import {
   Typography,
   Button,
 } from "@material-ui/core";
-import {useStyles} from "./styles/ProjectsStyles";
-
+import { useStyles } from "./styles/ProjectsStyles";
 
 const Projects = () => {
   const classes = useStyles();
