@@ -64,6 +64,13 @@ const Projects = () => {
       image: require("../images/hello.png"),
       url: "https://github.com/YouMingYeh/Portfolio",
     },
+    {
+      title: "Linker",
+      description:
+        "Using vite-plugin-ssr and Tailwind css to build a website that can link to some regular used websites by myself.",
+      image: require("../images/icon.png"),
+      url: "https://linker-eight.vercel.app/",
+    },
   ];
 
   const isMobile = window.innerWidth < 1000;

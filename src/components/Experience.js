@@ -45,6 +45,15 @@ const Experience = () => {
       details:
         "組織跨系級、上百人參加的戶外迎新活動，準備期橫跨半年，透過舉辦活動學習管理團隊、與他人合作",
     },
+    {
+      company: "技術部落格",
+      position: "作者",
+      icon: "📝",
+      link: "https://medium.com/@ym911216",
+      description: "撰寫技術部落格",
+      details:
+        "有撰寫技術部落格的習慣，紀錄並分享自己的所學，以更精進自己的概念與技術",
+    }
   ];
 
   return (

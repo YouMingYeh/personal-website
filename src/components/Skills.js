@@ -58,7 +58,7 @@ const Skills = () => {
       ],
     },
     {
-      skill: "前端框架",
+      skill: "前端開發工具與框架",
       icon: <Inventory2Icon />,
       items: [
         {
@@ -80,8 +80,17 @@ const Skills = () => {
           image:
             "https://www.datocms-assets.com/45470/1631026680-logo-react-native.png",
         },
+        {
+          name: "Tailwind.css",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png",
+        },
+        {
+          name: "Vite",
+          image: "https://www.svgrepo.com/show/374167/vite.svg",
+        },
       ],
     },
+    
     {
       skill: "後端框架與資料庫",
       icon: <DataObjectIcon />,
@@ -121,6 +130,10 @@ const Skills = () => {
           image:
             "https://www.payoda.com/wp-content/uploads/2021/05/1_mbP4Bjrs8Hshx7IgjsUNSg.jpeg",
         },
+        {
+          name: "firebase",
+          image: "https://1.bp.blogspot.com/-zVNGq7J_pkI/V2zc3rYWySI/AAAAAAAAWsM/SxLC4c3n5_Q0DcQEbRE1oCbE20T4gHyuACKgB/s1600/firebase_logo_shot.png"
+        }
       ],
     },
   ];
