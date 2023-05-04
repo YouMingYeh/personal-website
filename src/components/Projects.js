@@ -71,6 +71,13 @@ const Projects = () => {
       image: require("../images/icon.png"),
       url: "https://linker-eight.vercel.app/",
     },
+    {
+      title: "Text Base Math Calculator",
+      description: 
+        "Using Electron to build a text base math calculator for PC appplication.",
+      image: null,
+      url: "https://github.com/YouMingYeh/text-base-math-calculator"
+    }
   ];
 
   const isMobile = window.innerWidth < 1000;
