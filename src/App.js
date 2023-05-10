@@ -10,6 +10,7 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import { createDarkTheme, createLightTheme } from "./themes";
 import { HashLoader } from "react-spinners";
+import { Button, Dialog } from "@mui/material";
 
 const override = {
   position: "absolute",
@@ -20,6 +21,7 @@ const override = {
 
 function App() {
   const [mode, setMode] = useState(true);
+  const [open, setOpen] = useState(true);
 
   const theme = useMemo(() => {
     return mode ? createDarkTheme() : createLightTheme();
@@ -37,6 +39,35 @@ function App() {
         <Education />
         <Contact />
       </>
+      <Dialog open={open} onClose={() => setOpen(false)}>
+        <div
+          style={{
+            padding: "4rem",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <span
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: "bold",
+              alignSelf: "center",
+            }}
+          >
+            My Portfolio 2.0 is done!
+          </span>
+
+          <Button
+            variant="outlined"
+            onClick={() => window.open("https://yehyouming.vercel.app/")}
+            sx={{ fontWeight: "bold", color: "black", borderColor: "black" }}
+          >
+            CHECK IT OUT
+          </Button>
+        </div>
+      </Dialog>
 
       <div
         id="watermark"

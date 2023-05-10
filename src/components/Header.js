@@ -121,7 +121,7 @@ const Header = ({ setMode }) => {
                     handleMobileMenuClose();
                   }}
                 >
-                  關於我
+                  About me
                 </MenuItem>
                 <MenuItem
                   onClick={() => {
