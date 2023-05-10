@@ -62,7 +62,7 @@ const Projects = () => {
       description:
         "Check LEARN MORE to view this personal website repo details!",
       image: require("../images/hello.png"),
-      url: "https://github.com/YouMingYeh/Portfolio",
+      url: "https://github.com/YouMingYeh/personal-website",
     },
     {
       title: "Linker",
